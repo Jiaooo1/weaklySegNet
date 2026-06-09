@@ -5,7 +5,7 @@
 Create the conda environment with all dependencies:
 
 ```bash
-conda env create --name weaklySeg --file environment.yml
+conda env create --name weaklySeg --environment.yml
 ```
 
 Activate the environment:
