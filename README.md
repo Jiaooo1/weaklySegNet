@@ -1,20 +1,71 @@
-# weaklySegNet
-Requirement
+# WeaklySegNet
+
+## 📋 Requirements
+
+Create the conda environment with all dependencies:
+
+```bash
 conda env create --name weaklySeg --file environment.yml
+```
 
-Datasets
-MoNuSeg: https://monuseg.grand-challenge.org/Data/
-CPM17: https://www.cancer.gov/ccg/research/genome-sequencing/tcga
+Activate the environment:
 
-Data preparation
-Run prepare_data.py for Voronoi label and the k-means clustering label.
-Run labelbycolor.py and post_processing.py for color-aware pseudo labels.
+```bash
+conda activate weaklySeg
+```
 
-weaklySegNet pipeline
-Run train_coarse.py
-Run train_fine.py
-Run test_fine.py
+## 📊 Datasets
 
-Contact details
-If you have any questions, please contact Jiaooo111@126.com.
+The following datasets are supported:
 
+- **MoNuSeg**: [Download from Grand Challenge](https://monuseg.grand-challenge.org/Data/)
+- **CPM17**: [Download from TCGA](https://www.cancer.gov/ccg/research/genome-sequencing/tcga)
+
+## 🛠️ Data Preparation
+
+Before training, prepare the data with the following steps:
+
+### 1. Generate Voronoi and K-means labels
+
+```bash
+python prepare_data.py
+```
+
+This script generates Voronoi label and k-means clustering label for the dataset.
+
+### 2. Generate color-aware pseudo labels
+
+```bash
+python labelbycolor.py
+python post_processing.py
+```
+
+These scripts generate and refine color-aware pseudo labels.
+
+## 🚀 WeaklySegNet Pipeline
+
+Run the following scripts in order:
+
+### Step 1: Coarse training
+
+```bash
+python train_coarse.py
+```
+
+### Step 2: Fine training
+
+```bash
+python train_fine.py
+```
+
+### Step 3: Testing
+
+```bash
+python test_fine.py
+```
+
+## 📧 Contact
+
+If you have any questions, please feel free to contact:
+
+**Email**: [Jiaooo111@126.com](mailto:Jiaooo111@126.com)
